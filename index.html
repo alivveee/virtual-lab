@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Virtual Kimia — Larutan Elektrolit & Non-Elektrolit | Kelas X</title>
+<meta name="description" content="Laboratorium virtual interaktif Larutan Elektrolit dan Non-Elektrolit untuk Kimia SMA/MA kelas X (Fase E) — dilengkapi teori, LKPD, quiz, simulasi uji daya hantar listrik, evaluasi, dan referensi.">
+<!-- Google Fonts: Poppins (dengan fallback sans-serif bila offline) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#konten">Langsung ke konten</a>
+
+<!-- ============================================================
+     HEADER + NAVIGASI (tetap di atas; hamburger di HP)
+============================================================ -->
+<header class="kop" id="kop">
+  <div class="kop-dalam">
+    <button class="logo" data-goto="beranda" aria-label="Kembali ke Beranda — Lab Virtual Kimia">
+      <svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" focusable="false">
+        <path d="M16 6 h16 v3 l-3 3 v9 l10 18 a5 5 0 0 1 -4.3 7.5 H13.3 A5 5 0 0 1 9 39 L19 21 v-9 l-3 -3 Z"
+              fill="#e7f5ff" stroke="#1971c2" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M13.2 32.5 L34.8 32.5 L38 38 a5 5 0 0 1 -4.3 6.5 H13.3 A5 5 0 0 1 9 38 Z" fill="#51cf66"/>
+        <circle cx="20" cy="38" r="2.2" fill="#fff3bf" class="mengambang"/>
+        <circle cx="27" cy="41" r="1.6" fill="#a5d8ff" class="mengambang"/>
+        <circle cx="24" cy="35.5" r="1.3" fill="#fff"/>
+      </svg>
+      <span class="logo-teks"><strong>Lab Virtual Kimia</strong><small>Larutan Elektrolit &amp; Non-Elektrolit</small></span>
+    </button>
+
+    <button id="btnHamburger" class="btn-hamburger" aria-expanded="false" aria-controls="navList" aria-label="Buka menu navigasi">☰</button>
+
+    <nav class="nav-utama" aria-label="Navigasi utama">
+      <ul id="navList">
+        <li><button class="nav-link" data-goto="beranda">🏠 Beranda</button></li>
+        <li><button class="nav-link" data-goto="teori">📖 Teori Dasar</button></li>
+        <li><button class="nav-link" data-goto="lkpd">📝 LKPD</button></li>
+        <li><button class="nav-link" data-goto="quiz">❓ Quiz</button></li>
+        <li><button class="nav-link" data-goto="lab">🧪 Lab Virtual</button></li>
+        <li><button class="nav-link" data-goto="evaluasi">🏆 Evaluasi</button></li>
+        <li><button class="nav-link" data-goto="referensi">📚 Referensi</button></li>
+      </ul>
+    </nav>
+
+    <button id="btnResetKop" class="btn btn-mini btn-hapus no-print" title="Hapus semua data sesi (LKPD, Lab, Quiz, Evaluasi)">🗑️ Reset</button>
+  </div>
+</header>
+
+<main id="konten">
+
+<!-- ============================================================
+     1) BERANDA
+============================================================ -->
+<section id="beranda" class="page" aria-labelledby="judul-beranda">
+  <div class="hero kartu">
+    <div class="hero-teks">
+      <p class="etiket">🧪 Kimia SMA/MA Kelas X • Fase E • Kurikulum Merdeka</p>
+      <h1 id="judul-beranda" class="judul-gradasi">Larutan Elektrolit dan Non-Elektrolit</h1>
+      <p class="hero-uraian">
+        Laboratorium virtual ini mengajakmu menyelidiki daya hantar listrik berbagai larutan melalui
+        percobaan yang aman, seru, dan interaktif. Ungkap rahasia ionisasi: larutan mana yang membuat
+        lampu menyala <strong>terang</strong>, <strong>redup</strong>, atau tetap <strong>padam</strong>?
+        Setelah bereksperimen, kumpulkan data di LKPD, uji pemahamanmu di Quiz dan Evaluasi, lalu simpulkan
+        seperti kimistawan sungguhan!
+      </p>
+      <div class="hero-aksi">
+        <button class="btn btn-besar btn-utama" data-goto="teori">🚀 Mulai Belajar</button>
+        <button class="btn btn-besar btn-sek" data-goto="lab">🔬 Masuk Lab Virtual</button>
+      </div>
+      <p class="hero-credit">👩‍🔬 Disusun oleh <strong>Fatimah Azzahroh</strong> • Tahun <strong>2026</strong></p>
+    </div>
+
+    <!-- Ilustrasi SVG: gelas kimia + erlenmeyer + lampu menyala -->
+    <div class="hero-gambar">
+      <svg viewBox="0 0 420 340" role="img" aria-labelledby="heroSVGTitle" class="hero-svg">
+        <title id="heroSVGTitle">Ilustrasi laboratorium: erlenmeyer dan gelas kimia berisi larutan berwarna dengan gelembung, lampu pijar menyala terang, serta ion positif dan negatif yang melayang.</title>
+        <defs>
+          <radialGradient id="gradGlowHero">
+            <stop offset="0" stop-color="#fff3bf" stop-opacity="0.95"/>
+            <stop offset="0.55" stop-color="#ffe066" stop-opacity="0.5"/>
+            <stop offset="1" stop-color="#ffd43b" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- latar lembut -->
+        <circle cx="210" cy="175" r="158" fill="#fff3bf" opacity="0.5"/>
+        <circle cx="298" cy="255" r="68" fill="#d0bfff" opacity="0.4"/>
+        <circle cx="105" cy="255" r="42" fill="#c3fae8" opacity="0.5"/>
+        <!-- erlenmeyer -->
+        <g>
+          <rect x="194" y="56" width="34" height="44" fill="rgba(205,235,255,0.3)" stroke="#7db8dd" stroke-width="2.5"/>
+          <path d="M195,100 L151,220 Q145,236 161,236 L261,236 Q277,236 271,220 L227,100 Z"
+                fill="rgba(205,235,255,0.28)" stroke="#7db8dd" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M168,182 L154,218 Q149,232 163,232 L259,232 Q273,232 268,218 L254,182 Z" fill="#d0bfff"/>
+          <circle cx="200" cy="196" r="4" fill="#ffffff" opacity="0.9" class="mengambang"/>
+          <circle cx="220" cy="210" r="3" fill="#ffffff" opacity="0.85" class="mengambang"/>
+          <circle cx="186" cy="214" r="2.4" fill="#ffffff" opacity="0.8" class="mengambang"/>
+        </g>
+        <!-- gelas kimia -->
+        <g>
+          <path d="M297,122 L297,228 Q297,236 305,236 L367,236 Q375,236 375,228 L375,122"
+                fill="rgba(205,235,255,0.22)" stroke="#7db8dd" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M290,114 L297,122 M382,114 L375,122" stroke="#7db8dd" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M301,172 L301,226 Q301,231 306,231 L366,231 Q371,231 371,226 L371,172 Z" fill="#c3fae8"/>
+          <circle cx="330" cy="200" r="4" fill="#ffffff" opacity="0.9" class="mengambang"/>
+          <circle cx="348" cy="214" r="2.8" fill="#ffffff" opacity="0.85" class="mengambang"/>
+          <circle cx="318" cy="220" r="2.2" fill="#ffffff" opacity="0.8" class="mengambang"/>
+        </g>
+        <!-- lampu pijar menyala -->
+        <g>
+          <circle cx="95" cy="80" r="52" fill="url(#gradGlowHero)" class="lampu-hero"/>
+          <circle cx="95" cy="80" r="28" fill="#fffbe6" stroke="#f59f00" stroke-width="2.5"/>
+          <path d="M89,100 L89,84 L95,92 L101,84 L101,100" fill="none" stroke="#f59f00" stroke-width="2.2" stroke-linecap="round"/>
+          <rect x="83" y="104" width="24" height="5" rx="2" fill="#868e96"/>
+          <rect x="85" y="111" width="20" height="4" rx="2" fill="#495057"/>
+          <g stroke="#ffd43b" stroke-width="3" stroke-linecap="round" class="sinar">
+            <path d="M95,32 L95,42"/><path d="M95,118 L95,128"/>
+            <path d="M45,80 L55,80"/><path d="M135,80 L145,80"/>
+            <path d="M59,44 L66,51"/><path d="M131,44 L124,51"/>
+            <path d="M59,116 L66,109"/><path d="M131,116 L124,109"/>
+          </g>
+        </g>
+        <!-- ion melayang -->
+        <g class="mengambang" style="animation-delay:.3s">
+          <circle cx="345" cy="72" r="9" fill="#4dabf7"/><text x="345" y="76.5" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">+</text>
+        </g>
+        <g class="mengambang" style="animation-delay:1.2s">
+          <circle cx="385" cy="140" r="9" fill="#ff922b"/><text x="385" y="144.5" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">−</text>
+        </g>
+        <g class="mengambang" style="animation-delay:.8s">
+          <circle cx="52" cy="180" r="9" fill="#ff922b"/><text x="52" y="184.5" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">−</text>
+        </g>
+        <text x="255" y="52" font-size="16" fill="#9775fa" class="mengambang">✦</text>
+        <text x="150" y="300" font-size="14" fill="#74c0fc" class="mengambang" style="animation-delay:.6s">✦</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Kartu ringkas menu -->
+  <h2 class="judul-bagian">🧭 Jelajahi Laboratorium</h2>
+  <div class="menu-grid">
+    <button class="kartu menu-kartu" data-goto="teori">
+      <span class="menu-ikon" aria-hidden="true">📖</span>
+      <strong>Teori Dasar</strong>
+      <span>Larutan, ionisasi, disosiasi, elektrolit kuat/lemah, non-elektrolit &amp; tabel perbandingan.</span>
+      <span class="menu-panah" aria-hidden="true">Buka →</span>
+    </button>
+    <button class="kartu menu-kartu" data-goto="lkpd">
+      <span class="menu-ikon" aria-hidden="true">📝</span>
+      <strong>LKPD</strong>
+      <span>Lembar kerja: identitas, alat-bahan, tabel pengamatan otomatis, analisis, cetak/PDF.</span>
+      <span class="menu-panah" aria-hidden="true">Buka →</span>
+    </button>
+    <button class="kartu menu-kartu" data-goto="quiz">
+      <span class="menu-ikon" aria-hidden="true">❓</span>
+      <strong>Quiz</strong>
+      <span>10 soal pilihan ganda dengan umpan balik langsung &amp; skor akhir 0–100.</span>
+      <span class="menu-panah" aria-hidden="true">Buka →</span>
+    </button>
+    <button class="kartu menu-kartu" data-goto="lab">
+      <span class="menu-ikon" aria-hidden="true">🧪</span>
+      <strong>Lab Virtual</strong>
+      <span>Tuang 9 larutan 0,1 M ke gelas, celupkan elektroda, amati lampu &amp; gelembung!</span>
+      <span class="menu-panah" aria-hidden="true">Buka →</span>
+    </button>
+    <button class="kartu menu-kartu" data-goto="evaluasi">
+      <span class="menu-ikon" aria-hidden="true">🏆</span>
+      <strong>Evaluasi</strong>
+      <span>10 soal akhir: PG, kelompokkan, cocokkan, urutkan, dan jawaban ganda.</span>
+      <span class="menu-panah" aria-hidden="true">Buka →</span>
+    </button>
+    <button class="kartu menu-kartu" data-goto="referensi">
+      <span class="menu-ikon" aria-hidden="true">📚</span>
+      <strong>Referensi</strong>
+      <span>Buku, modul, situs web pendidikan, dan video pembelajaran.</span>
+      <span class="menu-panah" aria-hidden="true">Buka →</span>
+    </button>
+  </div>
+</section>
+
+<!-- ============================================================
+     2) TEORI DASAR (accordion)
+============================================================ -->
+<section id="teori" class="page" aria-labelledby="judul-teori">
+  <h2 id="judul-teori" class="judul-gradasi">📖 Teori Dasar</h2>
+  <p class="pengantar">Klik setiap bagian untuk membuka atau menutup materinya. Pelajari pelan-pelan, ya! 💡</p>
+
+  <div class="accordion">
+    <details class="acc" open>
+      <summary><span>💧 Larutan</span><span class="acc-chev" aria-hidden="true">▾</span></summary>
+      <div class="acc-isi">
+        <p><strong>Larutan</strong> adalah campuran homogen (satu fase) yang terdiri atas dua zat atau lebih.
+        Zat yang jumlahnya lebih banyak dan menentukan wujud larutan disebut <strong>pelarut</strong> (solven),
+        sedangkan zat yang jumlahnya lebih sedikit dan terlarut di dalamnya disebut <strong>zat terlarut</strong> (solute).</p>
+        <p>Contoh: pada larutan gula dalam air, <em>air</em> berperan sebagai pelarut dan <em>gula</em> sebagai zat terlarut.
+        Karena hampir semua zat dapat melarutkannya, air dijuluki <strong>pelarut universal</strong>.</p>
+        <p>Berdasarkan daya hantar listriknya, larutan dibedakan menjadi <strong>larutan elektrolit</strong> (dapat menghantarkan arus listrik)
+        dan <strong>larutan non-elektrolit</strong> (tidak dapat menghantarkan arus listrik).</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span>⚡ Ionisasi</span><span class="acc-chev" aria-hidden="true">▾</span></summary>
+      <div class="acc-isi">
+        <p><strong>Ionisasi</strong> adalah proses <strong>terbentuknya ion oleh senyawa kovalen polar</strong> ketika dilarutkan dalam air.
+        Molekul air (juga polar) menarik molekul senyawa kovalen polar sehingga ikatannya terputus dan terbentuk ion bermuatan.</p>
+        <div class="kotak-rumus">HCl → H<sup>+</sup> + Cl<sup>−</sup></div>
+        <div class="kotak-rumus">NH<sub>3</sub> + H<sub>2</sub>O ⇌ NH<sub>4</sub><sup>+</sup> + OH<sup>−</sup></div>
+        <p>Pada elektrolit lemah, ionisasi hanya terjadi <strong>sebagian</strong> sehingga persamaannya ditulis dengan panah dua arah (⇌, reversibel).</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span>🔀 Disosiasi</span><span class="acc-chev" aria-hidden="true">▾</span></summary>
+      <div class="acc-isi">
+        <p><strong>Disosiasi (elektrolitik)</strong> adalah proses <strong>penguraian senyawa ion menjadi ion-ionnya</strong> ketika dilarutkan dalam air.
+        Gaya tarik molekul air melemahkan ikatan antarion dalam kristal sehingga kisi ion terurai sempurna.</p>
+        <div class="kotak-rumus">NaCl → Na<sup>+</sup> + Cl<sup>−</sup></div>
+        <div class="kotak-rumus">NaOH → Na<sup>+</sup> + OH<sup>−</sup></div>
+        <div class="kotak-rumus">K<sub>2</sub>SO<sub>4</sub> → 2K<sup>+</sup> + SO<sub>4</sub><sup>2−</sup></div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span>💡 Elektrolit Kuat</span><span class="acc-chev" aria-hidden="true">▾</span></summary>
+      <div class="acc-isi">
+        <p><strong>Elektrolit kuat</strong> adalah zat yang dalam larutannya <strong>terionisasi/terdisosiasi sempurna</strong>
+        (derajat ionisasi <strong>α ≈ 1</strong>), sehingga jumlah ion sangat banyak dan daya hantar listriknya besar.</p>
+        <p>Ciri uji dengan rangkaian elektrolit: <strong>lampu menyala terang</strong> dan muncul <strong>banyak gelembung gas</strong>.</p>
+        <p>Contoh: asam kuat (HCl, H<sub>2</sub>SO<sub>4</sub>, HNO<sub>3</sub>), basa kuat (NaOH, KOH), dan hampir semua garam (NaCl, KNO<sub>3</sub>).</p>
+        <div class="kotak-rumus">HCl → H<sup>+</sup> + Cl<sup>−</sup> &nbsp;(terionisasi sempurna)</div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span>🔅 Elektrolit Lemah</span><span class="acc-chev" aria-hidden="true">▾</span></summary>
+      <div class="acc-isi">
+        <p><strong>Elektrolit lemah</strong> adalah zat yang dalam larutannya <strong>hanya terionisasi sebagian</strong>
+        (derajat ionisasi <strong>0 &lt; α &lt; 1</strong>), sehingga jumlah ionnya sedikit dan daya hantar listriknya kecil.</p>
+        <p>Ciri uji: <strong>lampu menyala redup</strong> dan <strong>gelembung sedikit</strong>.</p>
+        <p>Contoh: asam lemah (CH<sub>3</sub>COOH, HF, H<sub>2</sub>CO<sub>3</sub>) dan basa lemah (NH<sub>3</sub>).</p>
+        <div class="kotak-rumus">CH<sub>3</sub>COOH ⇌ CH<sub>3</sub>COO<sup>−</sup> + H<sup>+</sup> &nbsp;(sebagian, reversibel)</div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span>🚫 Non-Elektrolit</span><span class="acc-chev" aria-hidden="true">▾</span></summary>
+      <div class="acc-isi">
+        <p><strong>Non-elektrolit</strong> adalah zat yang <strong>tidak terionisasi</strong> dalam larutan
+        (derajat ionisasi <strong>α = 0</strong>). Zat terlarut tetap berupa <strong>molekul netral</strong>, tidak ada ion pembawa arus listrik.</p>
+        <p>Ciri uji: <strong>lampu padam</strong> dan <strong>tidak ada gelembung</strong>.</p>
+        <p>Contoh: gula (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>), etanol (C<sub>2</sub>H<sub>5</sub>OH), urea (CO(NH<sub>2</sub>)<sub>2</sub>), dan gliserin.</p>
+        <div class="kotak-rumus">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(aq) → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(aq) &nbsp;(tetap molekul, tidak terionisasi)</div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span>📊 Tabel Perbandingan</span><span class="acc-chev" aria-hidden="true">▾</span></summary>
+      <div class="acc-isi">
+        <div class="tabel-gulir">
+          <table class="tabel-teori">
+            <caption class="visually-hidden">Perbandingan elektrolit kuat, elektrolit lemah, dan non-elektrolit</caption>
+            <thead>
+              <tr><th scope="col">Aspek</th><th scope="col">Elektrolit Kuat 💡</th><th scope="col">Elektrolit Lemah 🔅</th><th scope="col">Non-Elektrolit 🚫</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Jenis ikatan</th><td>Ion / kovalen polar yang terionisasi sempurna</td><td>Kovalen polar (terionisasi sebagian)</td><td>Kovalen (tetap molekul netral)</td></tr>
+              <tr><th scope="row">Jumlah ion dalam larutan</th><td>Sangat banyak</td><td>Sedikit</td><td>Tidak ada</td></tr>
+              <tr><th scope="row">Derajat ionisasi α</th><td>α ≈ 1</td><td>0 &lt; α &lt; 1</td><td>α = 0</td></tr>
+              <tr><th scope="row">Nyala lampu</th><td>Terang</td><td>Redup</td><td>Padam</td></tr>
+              <tr><th scope="row">Gelembung gas</th><td>Banyak</td><td>Sedikit</td><td>Tidak ada</td></tr>
+              <tr><th scope="row">Contoh</th><td>HCl, H<sub>2</sub>SO<sub>4</sub>, NaOH, KOH, NaCl, KNO<sub>3</sub></td><td>CH<sub>3</sub>COOH, HF, H<sub>2</sub>CO<sub>3</sub>, NH<sub>3</sub></td><td>Gula (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>), etanol, urea, gliserin</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="kotak-info">💡 <strong>Ingat:</strong> lampu <strong>terang</strong> ⇔ ion <strong>banyak</strong> ⇔ α ≈ 1 • lampu <strong>redup</strong> ⇔ ion <strong>sedikit</strong> • lampu <strong>padam</strong> ⇔ ion <strong>tidak ada</strong>.</div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span>🌡️ Faktor Daya Hantar Listrik</span><span class="acc-chev" aria-hidden="true">▾</span></summary>
+      <div class="acc-isi">
+        <p>Besarnya daya hantar listrik larutan dipengaruhi beberapa faktor:</p>
+        <ol class="daftar-faktor">
+          <li><strong>Jumlah ion</strong> — makin banyak ion dalam larutan, makin besar daya hantarnya.</li>
+          <li><strong>Jenis ion</strong> — ion kecil dan mudah bergerak (mis. H<sup>+</sup>, OH<sup>−</sup>) menghantarkan listrik lebih baik.</li>
+          <li><strong>Konsentrasi larutan</strong> — pada elektrolit kuat, konsentrasi makin besar ⇒ ion makin banyak ⇒ daya hantar naik.</li>
+          <li><strong>Muatan ion</strong> — ion bermuatan besar (mis. Mg<sup>2+</sup>, SO<sub>4</sub><sup>2−</sup>) menghantarkan lebih kuat daripada bermuatan satu.</li>
+          <li><strong>Suhu</strong> — suhu naik ⇒ energi kinetik ion bertambah ⇒ ion bergerak lebih leluasa ⇒ daya hantar naik.</li>
+          <li><strong>Jenis zat terlarut</strong> — faktor utama: elektrolit menghasilkan ion, non-elektrolit tidak.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><span>🦺 Keselamatan Kerja di Laboratorium</span><span class="acc-chev" aria-hidden="true">▾</span></summary>
+      <div class="acc-isi">
+        <ul class="daftar-aman">
+          <li>👨‍🔬 <strong>Kenakan jas lab</strong> sebelum memasuki laboratorium.</li>
+          <li>🥽 <strong>Pakai kacamata pelindung</strong> selama melakukan percobaan.</li>
+          <li>🧤 <strong>Gunakan sarung tangan</strong> saat menangani bahan kimia.</li>
+          <li>🚫 <strong>Jangan pernah mencicipi atau mencium bahan kimia</strong> secara langsung.</li>
+          <li>♻️ <strong>Buang limbah/sisa larutan pada wadah khusus</strong>, jangan langsung ke saluran umum.</li>
+          <li>⚡ <strong>Hati-hati dengan listrik</strong>: pastikan tangan kering dan rangkaian benar sebelum dialiri arus.</li>
+          <li>🧼 <strong>Cuci tangan dengan sabun</strong> setelah praktikum selesai.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============================================================
+     3) LKPD
+============================================================ -->
+<section id="lkpd" class="page" aria-labelledby="judul-lkpd">
+  <h2 id="judul-lkpd" class="judul-gradasi">📝 Lembar Kerja Peserta Didik (LKPD)</h2>
+  <p class="pengantar">Isianmu <strong>tersimpan otomatis</strong> selama sesi browser. Baris tabel terisi otomatis dari hasil Lab Virtual,
+  tetapi kamu tetap bisa mengubahnya secara manual. Kolom bertanda <span class="wajib">*</span> wajib diisi sebelum mencetak.</p>
+
+  <!-- A. Identitas -->
+  <div class="kartu lkpd-blok">
+    <h3>A. Identitas Siswa</h3>
+    <div class="form-grid">
+      <div class="form-item">
+        <label for="inNama">Nama Lengkap <span class="wajib">*</span></label>
+        <input id="inNama" name="nama" type="text" autocomplete="name" placeholder="Tulis nama lengkapmu…">
+        <p class="err" id="err-inNama" hidden>Nama wajib diisi.</p>
+      </div>
+      <div class="form-item">
+        <label for="inKelas">Kelas <span class="wajib">*</span></label>
+        <input id="inKelas" name="kelas" type="text" placeholder="Contoh: X-3">
+        <p class="err" id="err-inKelas" hidden>Kelas wajib diisi.</p>
+      </div>
+      <div class="form-item">
+        <label for="inAbsen">Nomor Absen</label>
+        <input id="inAbsen" name="absen" type="number" min="1" placeholder="Contoh: 17">
+        <p class="err" id="err-inAbsen" hidden></p>
+      </div>
+      <div class="form-item">
+        <label for="inTanggal">Tanggal Praktikum</label>
+        <input id="inTanggal" name="tanggal" type="date">
+        <p class="err" id="err-inTanggal" hidden></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- B. Tujuan -->
+  <div class="kartu lkpd-blok">
+    <h3>B. Tujuan Percobaan</h3>
+    <ol>
+      <li>Mengamati daya hantar listrik berbagai larutan 0,1 M melalui nyala lampu dan gelembung gas pada rangkaian uji elektrolit.</li>
+      <li>Mengklasifikasikan larutan ke dalam elektrolit kuat, elektrolit lemah, dan non-elektrolit.</li>
+      <li>Menganalisis hubungan jenis zat terlarut (ikatan kimia dan ionisasi) dengan daya hantar listrik larutan.</li>
+    </ol>
+  </div>
+
+  <!-- C. Alat & Bahan -->
+  <div class="kartu lkpd-blok">
+    <h3>C. Alat dan Bahan</h3>
+    <p class="catatan-kecil">Centang setiap alat/bahan sebagai tanda kamu sudah "menyiapkannya":</p>
+    <div id="daftarAlat" class="alat-grid"></div>
+  </div>
+
+  <!-- D. Langkah Kerja -->
+  <div class="kartu lkpd-blok">
+    <h3>D. Langkah Kerja</h3>
+    <ol>
+      <li>Kenakan jas lab, kacamata pelindung, dan sarung tangan (keselamatan kerja!).</li>
+      <li>Amati rak reagen berisi 9 larutan uji 0,1 M beserta label rumus kimianya.</li>
+      <li>Tuang larutan pertama ke dalam gelas kimia (klik <em>Tuang ke Gelas</em> atau seret botolnya).</li>
+      <li>Celupkan rangkaian elektroda (baterai–lampu–elektroda) ke dalam larutan.</li>
+      <li>Amati nyala lampu (terang/redup/padam) dan gelembung gas (banyak/sedikit/tidak ada), lalu tekan <em>Catat ke LKPD</em>.</li>
+      <li>Angkat rangkaian, bilas gelas kimia, lalu tuang larutan berikutnya.</li>
+      <li>Ulangi langkah 3–6 hingga seluruh 9 larutan teruji.</li>
+      <li>Analisis data, jawab pertanyaan, tuliskan kesimpulan, lalu kembalikan alat dan cuci tangan.</li>
+    </ol>
+  </div>
+
+  <!-- E. Tabel Pengamatan -->
+  <div class="kartu lkpd-blok">
+    <h3>E. Tabel Pengamatan</h3>
+    <div class="tabel-gulir">
+      <table class="tabel-lkpd">
+        <thead>
+          <tr>
+            <th scope="col">Larutan (0,1 M)</th>
+            <th scope="col">Nyala Lampu</th>
+            <th scope="col">Gelembung</th>
+            <th scope="col">Golongan</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyLKPD"></tbody>
+      </table>
+    </div>
+    <p class="catatan-kecil">Baris terisi otomatis dari tombol <em>"Catat ke LKPD"</em> di Lab Virtual; kamu juga bisa memilih sendiri nilainya.</p>
+  </div>
+
+  <!-- F. Pertanyaan Analisis -->
+  <div class="kartu lkpd-blok">
+    <h3>F. Pertanyaan Analisis <span class="wajib">*</span></h3>
+    <div class="analisis-grid">
+      <div class="form-item">
+        <label for="ta1">1. Mengapa lampu menyala terang pada larutan NaCl dan HCl? Jelaskan dari jenis ikatannya dan ion yang dihasilkan.</label>
+        <textarea id="ta1" class="ta-analisis" rows="3" placeholder="Tulis jawabanmu…"></textarea>
+        <p class="err" id="err-ta1" hidden>Jawaban wajib diisi.</p>
+      </div>
+      <div class="form-item">
+        <label for="ta2">2. Apa hubungan banyaknya gelembung gas dengan derajat ionisasi (α) larutan?</label>
+        <textarea id="ta2" class="ta-analisis" rows="3" placeholder="Tulis jawabanmu…"></textarea>
+        <p class="err" id="err-ta2" hidden>Jawaban wajib diisi.</p>
+      </div>
+      <div class="form-item">
+        <label for="ta3">3. Apa perbedaan elektrolit kuat dan elektrolit lemah dilihat dari derajat ionisasi (α), nyala lampu, dan jumlah gelembung?</label>
+        <textarea id="ta3" class="ta-analisis" rows="3" placeholder="Tulis jawabanmu…"></textarea>
+        <p class="err" id="err-ta3" hidden>Jawaban wajib diisi.</p>
+      </div>
+      <div class="form-item">
+        <label for="ta4">4. Mengapa larutan gula (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>) tidak dapat menghantarkan arus listrik padahal gula larut dalam air?</label>
+        <textarea id="ta4" class="ta-analisis" rows="3" placeholder="Tulis jawabanmu…"></textarea>
+        <p class="err" id="err-ta4" hidden>Jawaban wajib diisi.</p>
+      </div>
+      <div class="form-item">
+        <label for="ta5">5. Mengapa CH<sub>3</sub>COOH termasuk elektrolit lemah, bukan elektrolit kuat? Tuliskan persamaan ionisasinya.</label>
+        <textarea id="ta5" class="ta-analisis" rows="3" placeholder="Tulis jawabanmu…"></textarea>
+        <p class="err" id="err-ta5" hidden>Jawaban wajib diisi.</p>
+      </div>
+      <div class="form-item">
+        <label for="ta6">6. Tuliskan kesimpulan percobaanmu (hubungan jenis zat terlarut, ion yang terbentuk, nyala lampu, dan golongan larutan).</label>
+        <textarea id="ta6" class="ta-analisis" rows="4" placeholder="Tulis kesimpulanmu…"></textarea>
+        <p class="err" id="err-ta6" hidden>Kesimpulan wajib diisi.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lkpd-aksi no-print">
+    <button id="btnCetak" class="btn btn-besar btn-utama">🖨️ Cetak / Print</button>
+    <button id="btnPDF" class="btn btn-besar btn-sek">📄 Simpan sebagai PDF</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     4) QUIZ
+============================================================ -->
+<section id="quiz" class="page" aria-labelledby="judul-quiz">
+  <h2 id="judul-quiz" class="judul-gradasi">❓ Quiz Interaktif</h2>
+  <p class="pengantar">10 soal pilihan ganda, tampil satu per satu. Pilih jawaban untuk melihat umpan balik langsung — urutan soal diacak setiap diulang!</p>
+  <div id="quizBox" class="quiz-kotak"></div>
+  <div class="aksi-tengah no-print">
+    <button id="btnResetQuiz" class="btn btn-sek">🔄 Reset Quiz</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     5) LAB VIRTUAL
+============================================================ -->
+<section id="lab" class="page" aria-labelledby="judul-lab">
+  <h2 id="judul-lab" class="judul-gradasi">🧪 Lab Virtual — Uji Daya Hantar Listrik</h2>
+  <p class="pengantar">
+    <strong>Seret botol larutan ke meja</strong> untuk menuang, lalu <strong>seret rangkaian elektroda ke gelas</strong> (atau tekan tombolnya) untuk menguji.
+    Semua tombol juga bisa dipakai dengan keyboard dan layar sentuh. 💡
+  </p>
+
+  <div class="lab-wrap">
+    <!-- Rak kiri: botol reagen + chip rangkaian -->
+    <div class="lab-rak kartu">
+      <h3>🧴 Rak Reagen — Larutan 0,1 M</h3>
+      <div id="botolGrid" class="botol-grid"></div>
+      <div class="chip-rangkaian-wrap">
+        <p class="chip-judul">Alat uji:</p>
+        <div id="chipRangkaian" class="chip-rangkaian" role="button" tabindex="0" draggable="true"
+             aria-pressed="false" aria-label="Rangkaian elektroda (baterai, lampu, dua elektroda karbon). Tekan Enter atau seret ke gelas untuk mencelupkan/mengangkat.">
+          <svg viewBox="0 0 64 64" width="52" height="52" aria-hidden="true" focusable="false">
+            <rect x="4" y="40" width="20" height="13" rx="3" fill="#1971c2"/>
+            <rect x="8" y="35" width="4" height="6" fill="#495057"/><rect x="16" y="35" width="4" height="6" fill="#495057"/>
+            <circle cx="38" cy="17" r="10" fill="#fffbe6" stroke="#f59f00" stroke-width="2.5"/>
+            <path d="M34,25 L34,15 L38,20 L42,15 L42,25" fill="none" stroke="#f59f00" stroke-width="2"/>
+            <rect x="34" y="27" width="8" height="5" rx="2" fill="#868e96"/>
+            <rect x="48" y="38" width="6" height="22" rx="3" fill="#495057"/>
+            <rect x="56" y="38" width="6" height="22" rx="3" fill="#495057"/>
+            <path d="M24,46 C28,34 44,34 48,38" fill="none" stroke="#ff6b6b" stroke-width="2.5"/>
+            <path d="M56,38 C60,50 62,50 62,44" fill="none" stroke="#495057" stroke-width="2.5"/>
+          </svg>
+          <span class="chip-teks"><strong>Rangkaian Elektroda</strong><small>seret ke gelas / tekan Enter</small></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kanan: meja + hasil -->
+    <div class="lab-kanan">
+      <div class="lab-scene-wrap kartu" id="zonaLab">
+        <div class="drop-overlay" aria-hidden="true"><span>🫗 Lepaskan di sini</span></div>
+        <svg id="sceneSVG" viewBox="0 0 720 480" role="img" aria-labelledby="sceneTitle">
+          <title id="sceneTitle">Meja laboratorium uji elektrolit: gelas kimia berisi larutan, rangkaian baterai-lampu-elektroda karbon, erlenmeyer, pipet tetes, dan batang pengaduk.</title>
+          <defs>
+            <linearGradient id="gradDinding" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#eef8ff"/><stop offset="1" stop-color="#ffffff"/>
+            </linearGradient>
+            <linearGradient id="gradMeja" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffd8a8"/><stop offset="1" stop-color="#ffb066"/>
+            </linearGradient>
+            <linearGradient id="gradBaterai" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#74c0fc"/><stop offset="1" stop-color="#1971c2"/>
+            </linearGradient>
+            <radialGradient id="gradGlow">
+              <stop offset="0" stop-color="#fff3bf" stop-opacity="0.95"/>
+              <stop offset="0.5" stop-color="#ffe066" stop-opacity="0.55"/>
+              <stop offset="1" stop-color="#ffd43b" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- dinding & meja -->
+          <rect x="0" y="0" width="720" height="380" fill="url(#gradDinding)"/>
+          <text x="696" y="34" text-anchor="end" font-size="15" font-weight="700" fill="#74c0fc" opacity="0.9">MEJA UJI ELEKTROLIT — KIMIA X</text>
+          <rect x="0" y="378" width="720" height="16" fill="url(#gradMeja)"/>
+          <rect x="0" y="378" width="720" height="4" fill="#ffe3c2"/>
+          <rect x="48" y="394" width="16" height="78" rx="5" fill="#e8a04c"/>
+          <rect x="656" y="394" width="16" height="78" rx="5" fill="#e8a04c"/>
+          <ellipse cx="373" cy="392" rx="92" ry="8" fill="rgba(0,0,0,0.08)"/>
+
+          <!-- erlenmeyer dekorasi kiri -->
+          <g>
+            <rect x="197" y="288" width="26" height="18" fill="rgba(205,235,255,0.35)" stroke="#7db8dd" stroke-width="2"/>
+            <path d="M198,306 L172,368 Q168,377 178,377 L242,377 Q252,377 248,368 L222,306 Z"
+                  fill="rgba(205,235,255,0.3)" stroke="#7db8dd" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M186,342 L175,369 Q171,376 180,376 L240,376 Q249,376 245,369 L234,342 Z" fill="#d0bfff"/>
+          </g>
+
+          <!-- GELAS KIMIA -->
+          <g id="gelasGrup">
+            <path id="cairan" d="M304,301 L304,371 Q304,377 310,377 L436,377 Q442,377 442,371 L442,301 Z"
+                  fill="#dbeeff" style="display:none"/>
+            <ellipse id="permukaan" cx="373" cy="301" rx="69" ry="5" fill="#b3dcff" style="display:none"/>
+            <g id="gelembungGrup"></g>
+            <g id="ionGrup"></g>
+            <path id="gelasPath" d="M300,230 L300,370 Q300,379 309,379 L437,379 Q446,379 446,370 L446,230"
+                  fill="rgba(205,235,255,0.22)" stroke="#7db8dd" stroke-width="5" stroke-linecap="round"/>
+            <path d="M300,230 L291,222 M446,230 L455,222" stroke="#7db8dd" stroke-width="5" stroke-linecap="round"/>
+            <path d="M424,340 L434,340 M424,300 L434,300 M424,260 L434,260" stroke="#a5d3ec" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+
+          <!-- petunjuk area drop -->
+          <rect id="dropHint" x="286" y="212" width="174" height="180" rx="16" fill="none"
+                stroke="#ff922b" stroke-width="3" stroke-dasharray="9 9" opacity="0"/>
+
+          <!-- RANGKAIAN UJI (baterai-lampu-elektroda) -->
+          <g id="rangkaian">
+            <path d="M106,290 C102,208 196,168 355,213" fill="none" stroke="#ff6b6b" stroke-width="5" stroke-linecap="round"/>
+            <path d="M381,213 C387,220 390,232 386,245" fill="none" stroke="#4dabf7" stroke-width="5" stroke-linecap="round"/>
+            <path d="M350,245 C326,198 210,170 140,290" fill="none" stroke="#495057" stroke-width="5" stroke-linecap="round"/>
+            <!-- baterai -->
+            <rect x="100" y="280" width="12" height="12" rx="2" fill="#495057"/>
+            <rect x="136" y="280" width="12" height="12" rx="2" fill="#495057"/>
+            <text x="106" y="276" text-anchor="middle" font-size="14" font-weight="800" fill="#e03131">+</text>
+            <text x="142" y="276" text-anchor="middle" font-size="14" font-weight="800" fill="#1971c2">−</text>
+            <rect x="80" y="292" width="88" height="50" rx="9" fill="url(#gradBaterai)"/>
+            <text x="124" y="320" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">BATERAI</text>
+            <text x="124" y="336" text-anchor="middle" font-size="10" font-weight="600" fill="#e7f5ff">9 V</text>
+            <!-- lampu -->
+            <circle id="lampuGlow" cx="368" cy="162" r="58" fill="url(#gradGlow)" opacity="0"/>
+            <circle cx="368" cy="162" r="31" fill="rgba(255,251,230,0.6)" stroke="#f1a35e" stroke-width="3"/>
+            <path id="filamen" d="M361,210 L361,190 L368,199 L375,190 L375,210" fill="none" stroke="#ced4da" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="354" y="193" width="28" height="7" rx="2.5" fill="#868e96"/>
+            <rect x="354" y="202" width="28" height="7" rx="2.5" fill="#868e96"/>
+            <rect x="357" y="211" width="22" height="6" rx="3" fill="#495057"/>
+            <path d="M347,146 A28,28 0 0 1 360,134" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+            <!-- elektroda karbon -->
+            <rect x="341" y="238" width="18" height="10" rx="3" fill="#868e96"/>
+            <rect x="377" y="238" width="18" height="10" rx="3" fill="#868e96"/>
+            <rect x="344.5" y="245" width="11" height="100" rx="4" fill="#343a40"/>
+            <rect x="380.5" y="245" width="11" height="100" rx="4" fill="#343a40"/>
+          </g>
+
+          <!-- pipet tetes & batang pengaduk -->
+          <g transform="translate(560,376)">
+            <ellipse cx="0" cy="-73" rx="11" ry="13" fill="#faa2c1"/>
+            <rect x="-7" y="-62" width="14" height="52" fill="rgba(205,235,255,0.5)" stroke="#7db8dd" stroke-width="2"/>
+            <path d="M-7,-10 L0,6 L7,-10" fill="rgba(205,235,255,0.5)" stroke="#7db8dd" stroke-width="2" stroke-linejoin="round"/>
+          </g>
+          <g transform="translate(618,376) rotate(10)">
+            <rect x="-3.5" y="-96" width="7" height="96" rx="3.5" fill="rgba(205,235,255,0.5)" stroke="#7db8dd" stroke-width="2"/>
+          </g>
+
+          <!-- label isi gelas -->
+          <text id="labelGelas" x="373" y="430" text-anchor="middle" font-size="15" font-weight="700" fill="#8a5a2b">GELAS: KOSONG</text>
+        </svg>
+      </div>
+
+      <div class="lab-kendali no-print">
+        <button id="btnElektroda" class="btn btn-utama">⬇️ Celupkan Elektroda</button>
+        <button id="btnResetLab" class="btn btn-sek">🧼 Reset Praktikum</button>
+      </div>
+
+      <div class="lab-progres kartu">
+        <p class="progres-atas"><strong id="teksProgres">0/9</strong> larutan sudah diuji — ayo lengkapi semuanya! 🔬</p>
+        <div class="bar-progres" role="progressbar" aria-valuemin="0" aria-valuemax="9" aria-valuenow="0" aria-label="Progres larutan yang sudah diuji">
+          <div id="barProgres" class="bar-isi" style="width:0%"></div>
+        </div>
+        <div id="titikProgres" class="titik-progres"></div>
+      </div>
+
+      <div id="panelHasil" class="kartu panel-hasil" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6) EVALUASI
+============================================================ -->
+<section id="evaluasi" class="page" aria-labelledby="judul-evaluasi">
+  <h2 id="judul-evaluasi" class="judul-gradasi">🏆 Evaluasi Akhir</h2>
+  <p class="pengantar">10 soal dalam satu halaman: pilihan ganda, kelompokkan &amp; cocokkan (drag &amp; drop — atau ketuk larutan lalu ketuk kotak tujuan / gunakan dropdown), urutkan, dan jawaban ganda. Skor maksimal 100!</p>
+  <div id="evalBox"></div>
+</section>
+
+<!-- ============================================================
+     7) REFERENSI
+============================================================ -->
+<section id="referensi" class="page" aria-labelledby="judul-referensi">
+  <h2 id="judul-referensi" class="judul-gradasi">📚 Referensi</h2>
+  <p class="pengantar">Sumber-sumber untuk memperdalam materi. Semua tautan dibuka di tab baru.</p>
+
+  <div class="ref-grid">
+    <div class="kartu ref-kartu">
+      <h3>📕 Buku &amp; Modul</h3>
+      <ul class="ref-daftar">
+        <li>
+          <a href="https://buku.kemdikbud.go.id" target="_blank" rel="noopener noreferrer">Kimia SMA/MA Kelas X — Kurikulum Merdeka (Buku Sekolah Elektronik)</a>
+          <span class="ref-meta">Tim Penyusun, Pusat Perbukuan, Kemdikbudristek • buku.kemdikbud.go.id (unduh gratis)</span>
+        </li>
+        <li>
+          <a href="https://kurikulum.kemdikbud.go.id" target="_blank" rel="noopener noreferrer">Modul Ajar &amp; Dokumen Kurikulum (Fase E)</a>
+          <span class="ref-meta">Pusat Kurikulum dan Pembelajaran, Kemdikbudristek • kurikulum.kemdikbud.go.id</span>
+        </li>
+        <li>
+          <a href="https://www.mheducation.com" target="_blank" rel="noopener noreferrer">Chemistry — Raymond Chang</a>
+          <span class="ref-meta">Raymond Chang • McGraw Hill • tersedia di toko buku/perpustakaan</span>
+        </li>
+        <li>
+          <a href="https://www.wiley.com" target="_blank" rel="noopener noreferrer">Chemistry: The Study of Matter and Its Changes</a>
+          <span class="ref-meta">Brady &amp; Senese • John Wiley &amp; Sons • tersedia di toko buku/perpustakaan</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="kartu ref-kartu">
+      <h3>🌐 Situs Web Pendidikan</h3>
+      <ul class="ref-daftar">
+        <li>
+          <a href="https://belajar.kemdikbud.go.id" target="_blank" rel="noopener noreferrer">Rumah Belajar</a>
+          <span class="ref-meta">Kemendikbudristek • belajar.kemdikbud.go.id</span>
+        </li>
+        <li>
+          <a href="https://bds.kemdikbud.go.id" target="_blank" rel="noopener noreferrer">Buku Sekolah Digital</a>
+          <span class="ref-meta">Kemendikbudristek • bds.kemdikbud.go.id</span>
+        </li>
+        <li>
+          <a href="https://www.khanacademy.org/science/chemistry" target="_blank" rel="noopener noreferrer">Khan Academy — Kimia</a>
+          <span class="ref-meta">Khan Academy • khanacademy.org (tersedia versi Indonesia)</span>
+        </li>
+        <li>
+          <a href="https://chem.libretexts.org" target="_blank" rel="noopener noreferrer">LibreTexts Chemistry</a>
+          <span class="ref-meta">LibreTexts.org • University of California, Davis</span>
+        </li>
+        <li>
+          <a href="https://phet.colorado.edu" target="_blank" rel="noopener noreferrer">PhET Interactive Simulations</a>
+          <span class="ref-meta">University of Colorado Boulder • phet.colorado.edu</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="kartu ref-kartu">
+      <h3>🎬 Video Pembelajaran</h3>
+      <ul class="ref-daftar">
+        <li>
+          <a href="https://www.youtube.com/results?search_query=larutan+elektrolit+dan+nonelektrolit+kimia" target="_blank" rel="noopener noreferrer">Pencarian: "Larutan Elektrolit dan Nonelektrolit"</a>
+          <span class="ref-meta">YouTube • kumpulan video penjelasan konsep dari berbagai kanal edukasi</span>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/results?search_query=percobaan+uji+daya+hantar+listrik+larutan" target="_blank" rel="noopener noreferrer">Pencarian: "Percobaan Uji Daya Hantar Listrik Larutan"</a>
+          <span class="ref-meta">YouTube • video praktikum nyata untuk membandingkan dengan Lab Virtual</span>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/results?search_query=animasi+ionisasi+elektrolit+kimia" target="_blank" rel="noopener noreferrer">Pencarian: "Animasi Ionisasi Elektrolit"</a>
+          <span class="ref-meta">YouTube • visualisasi gerak ion dalam larutan</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kotak-info">⚠️ <strong>Catatan:</strong> tautan di atas menuju halaman utama/resmi sumber. Sebelum digunakan, <strong>periksa ulang setiap tautan</strong> — bila alamat berpindah, cari judul sumber melalui mesin pencari.</div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="kaki">
+  <div class="kaki-dalam">
+    <p class="kaki-judul">👩‍🔬 <strong>Laboratorium Virtual Kimia</strong> — Larutan Elektrolit dan Non-Elektrolit</p>
+    <p>Kimia SMA/MA Kelas X (Fase E) • Disusun oleh <strong>Fatimah Azzahroh</strong> • 2026</p>
+    <button id="btnResetBawah" class="btn btn-hapus no-print">🗑️ Reset Semua Data</button>
+    <p class="kaki-catatan">Seluruh isian (LKPD, hasil Lab, Quiz, dan Evaluasi) tersimpan otomatis selama sesi browser ini.</p>
+  </div>
+</footer>
+
+<!-- Notifikasi toast -->
+<div id="toastBox" class="toast-box" aria-live="polite" role="status"></div>
+
+<!-- Modal konfirmasi umum -->
+<div class="modal-latar" id="modalBack" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalJudul" aria-describedby="modalPesan">
+    <h3 id="modalJudul">Judul</h3>
+    <p id="modalPesan">Pesan…</p>
+    <div class="modal-aksi">
+      <button id="modalBatal" class="btn btn-sek">Batal</button>
+      <button id="modalYa" class="btn btn-utama">Ya</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal petunjuk cetak/PDF -->
+<div class="modal-latar" id="modalCetak" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cetakJudul">
+    <h3 id="cetakJudul">🖨️ Cetak / Simpan sebagai PDF</h3>
+    <ol class="cetak-langkah">
+      <li>Pastikan <strong>nama, kelas, dan semua jawaban analisis</strong> sudah terisi (akan diperiksa otomatis).</li>
+      <li>Setelah dialog cetak terbuka, pilih tujuan <strong>"Save as PDF" / "Simpan sebagai PDF"</strong>.</li>
+      <li>Atur ukuran kertas <strong>A4</strong> dan margin <em>Default</em>, lalu klik <strong>Simpan</strong>.</li>
+    </ol>
+    <div class="modal-aksi">
+      <button id="cetakBatal" class="btn btn-sek">Batal</button>
+      <button id="cetakYa" class="btn btn-utama">Buka Dialog Cetak</button>
+    </div>
+  </div>
+</div>
+
+<noscript><p class="noscript-warn">⚠️ Aktifkan JavaScript di browsermu untuk menggunakan laboratorium virtual ini.</p></noscript>
+
+<!-- Skrip modular: data → util → tiap fitur → inisialisasi -->
+<script src="js/data.js"></script>
+<script src="js/util.js"></script>
+<script src="js/lkpd.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/lab.js"></script>
+<script src="js/evaluasi.js"></script>
+<script src="js/init.js"></script>
+</body>
+</html>
