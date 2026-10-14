@@ -8,7 +8,7 @@ const $  = (sel, ctx) => (ctx || document).querySelector(sel);
 const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
 const SVGNS = 'http://www.w3.org/2000/svg';
 
-/* Acak urutan array (Fisher–Yates) — dipakai quiz & evaluasi */
+/* Acak urutan array (Fisher–Yates) — dipakai evaluasi */
 function acak(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -38,7 +38,7 @@ function gulirKe(el, blok) {
 }
 /* Cari objek larutan berdasar id */
 function solusiById(id) { return SOLUSI.find(s => s.id === id) || null; }
-/* Pesan motivasi sesuai rentang skor (dipakai Quiz & Evaluasi) */
+/* Pesan motivasi sesuai rentang skor */
 function pesanSkor(s) {
   if (s >= 90) return 'Luar biasa! Kamu benar-benar menguasai materi larutan elektrolit dan non-elektrolit. 🏆';
   if (s >= 70) return 'Bagus sekali! Sedikit lagi menuju sempurna — cek kembali soal yang keliru, ya. 💪';
@@ -58,7 +58,6 @@ function storeAwal() {
     halaman: 'beranda',
     lkpd:  { nama: '', kelas: '', absen: '', tanggal: '', alat: {}, tabel: {}, analisis: {} },
     lab:   { isi: null, elektroda: false, diuji: {} },
-    quiz:  { urutan: null, tata: null, jawab: {}, pos: 0, selesai: false, skor: 0 },
     ev:    { tata: null, jawaban: {}, diperiksa: false, skor: 0 }
   };
 }
@@ -124,9 +123,9 @@ function konfirmasi(judul, pesan, teksYa, teksBatal, cb) {
 }
 
 /* ---------- Navigasi antarhalaman ---------- */
-const HALAMAN = ['beranda', 'teori', 'lkpd', 'quiz', 'lab', 'evaluasi', 'referensi'];
+const HALAMAN = ['beranda', 'teori', 'lkpd', 'lab', 'evaluasi', 'referensi'];
 const NAMA_HAL = {
-  beranda: 'Beranda', teori: 'Teori Dasar', lkpd: 'LKPD', quiz: 'Quiz',
+  beranda: 'Beranda', teori: 'Teori Dasar', lkpd: 'LKPD',
   lab: 'Lab Virtual', evaluasi: 'Evaluasi', referensi: 'Referensi'
 };
 

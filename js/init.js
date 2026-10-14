@@ -22,29 +22,21 @@ function resetSemua() {
   perbaruiPanel();
   perbaruiKendali();
   perbaruiProgres();
-  /* --- reset Quiz (urutan diacak ulang) --- */
-  pastikanQuizState();
-  store.quiz.urutan = acak(QUIZ.map((_, i) => i));
-  store.quiz.tata = QUIZ.map(() => acak([0, 1, 2, 3]));
-  store.quiz.jawab = {}; store.quiz.pos = 0; store.quiz.selesai = false; store.quiz.skor = 0;
-  simpanStore();
-  renderQuiz();
   /* --- reset Evaluasi (tata letak diacak ulang) --- */
   buatTataEval();
   renderEval();
   /* --- kembali ke Beranda --- */
   tampilHalaman('beranda');
-  toast('🧹 Semua data berhasil dihapus (LKPD, Lab, Quiz, Evaluasi). Kembali ke Beranda!', 'sukses');
+  toast('🧹 Semua data berhasil dihapus (LKPD, Lab, Evaluasi). Kembali ke Beranda!', 'sukses');
 }
 
 /* ---------- Tombol umum: modal konfirmasi, ESC, reset data ---------- */
 function pasangTombolUmum() {
   const mintaReset = () => konfirmasi(
     'Reset Semua Data',
-    'Yakin ingin menghapus semua data? Seluruh isian <strong>LKPD</strong>, hasil <strong>Lab Virtual</strong>, <strong>Quiz</strong>, dan <strong>Evaluasi</strong> akan dihapus dan kamu kembali ke Beranda.',
+    'Yakin ingin menghapus semua data? Seluruh isian <strong>LKPD</strong>, hasil <strong>Lab Virtual</strong>, dan <strong>Evaluasi</strong> akan dihapus dan kamu kembali ke Beranda.',
     'Ya, Hapus', 'Batal', resetSemua
   );
-  $('#btnResetKop').addEventListener('click', mintaReset);
   $('#btnResetBawah').addEventListener('click', mintaReset);
   /* tombol Ya/Batal pada modal konfirmasi umum */
   $('#modalYa').addEventListener('click', () => {
@@ -69,7 +61,6 @@ function initAplikasi() {
   store = muatStore() || storeAwal();
   pasangNavigasi();
   pasangLKPD();
-  pasangQuiz();
   pasangLab();
   pasangEvaluasi();
   pasangTombolUmum();

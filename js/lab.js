@@ -33,6 +33,7 @@ function renderBotol() {
 function setLampu(nyala) { /* 'terang' | 'redup' | 'padam' */
   $('#lampuGlow').setAttribute('class', 'nyala-' + nyala);
   $('#filamen').setAttribute('class', 'fil-' + nyala);
+  $('#lampuKaca').setAttribute('class', 'kaca-' + nyala);
 }
 function isiVisual(s) {
   const c = $('#cairan'), p = $('#permukaan');
